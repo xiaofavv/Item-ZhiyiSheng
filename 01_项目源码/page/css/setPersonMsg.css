@@ -1,0 +1,354 @@
+@charset "utf-8";
+/*清除之前的样式*/
+body{
+	color:#85a4ce;
+}
+#content{
+	background-color:#fff ;
+}
+#P-List li{
+	color:#85a4ce;
+}
+#P-List li:hover{
+	background-color: #fff;
+}
+#P-List li i{
+	color:#85a4ce;
+}
+#P-List li i:hover{
+	color: #31b0d5;
+}
+/*设置首页账户设置一栏突出显示*/
+#P-List #setInfo{
+	color:blue;
+}
+#P-List #setInfo i{
+	color:blue;
+}
+
+/* CSS Document */
+.middle .content .content-body{
+	border-right:1px solid #ccc;	
+}
+/*账户小头像设置*/
+.middle .content .content-body .content-left .smallPic{
+	width:150px;
+	position:absolute;
+	top:20px;	
+}
+.middle .content .content-body .content-left .smallPic img{
+	width:70px;
+	height:70px;
+	border:2px solid #000;
+	border-radius:3px;
+}
+.middle .content .content-body .content-left .smallPic span{
+	color:#85a4ce;
+	position:absolute;
+	bottom:0;
+	width: 50px;
+	right:10px;
+	white-space:nowrap; 
+	text-overflow:ellipsis; 
+	-o-text-overflow:ellipsis; 
+	overflow:hidden;
+}
+
+/*账户设置的右边部分*/
+.middle .content .content-body .content-setMsg{
+	width:80%;
+	height:100%;
+	float:left;
+	border-left:1px solid #CCC;
+}
+
+.middle .content .content-body .content-setMsg .setting-head{
+	margin-left:2em;
+	height:70px;
+	border-bottom:1px solid #ccc;
+}
+.middle .content .content-body .content-setMsg .setting-head i{
+	font-size:30px;
+	line-height:70px;
+	text-indent:.5em;
+	float:left;
+	letter-spacing:.5em;
+}
+.middle .content .content-body .content-setMsg .setting-head span{
+	display:inline-block;
+	line-height:70px;
+	height:70px;
+	font-size:20px;
+}
+
+.middle .content .content-body .content-setMsg .setting-content{
+	margin-left:2em;
+	margin-top:2em;
+	width:54vw;
+}
+.middle .content .content-body .content-setMsg .setting-content #tab-content{
+	text-indent:1em;
+	margin-top:20px;
+}
+#msgUl{
+	display:inline-block;
+	width:100%;
+	color:#06F;
+	margin-bottom:20px;
+}
+#msgUl li{
+	float:left;
+	margin-right:20px;
+}
+#msgUl li:hover{
+	cursor:pointer;
+}
+#msgUl .checkMsg{
+	color:#000;
+}
+#mineMsg form p{
+	margin-top:15px;
+}
+
+/*保存信息*/
+.baocunP{
+	display:block;
+	wdth:100%;
+	margin-left:30px;
+}
+
+/*设置吱币页面*/
+#setMoney h5{
+	color:#666;
+}
+#setMoney h5 span{
+	color:red;
+	font-size:24px;
+}
+#setMoney .ziBi label{
+	width:200px;	
+}
+#setMoney .czMoney{
+	width:280px;
+	margin-left:20px;
+	margin-top:10px;
+	border:1px solid #f0ad4e;
+	text-indent:2em;
+	position:relative;
+}
+#setMoney .czMoney li{
+	width:120px;
+	line-height:30px;
+	float:left;
+	border:1px solid #f0ad4e;
+	margin-left:10px;
+	margin-top:10px;
+	position:relative;
+	color:#C30;
+}
+#setMoney .czMoney li input{
+	position:absolute;
+	left:15px;
+	top:3px;
+}
+#setMoney .czMoney #makeSure{
+	margin-left: 70px;
+    margin-top: 20px;
+	margin-bottom:10px;
+}
+/*设置充值提示*/
+#tishiDiv{
+	position:absolute;
+	bottom:10px;
+	right:10px;
+	color:red;
+}
+/*好友设置*/
+#fContent{
+	width:100%;
+	height:100%;
+}
+#searchFrPage{
+	width:100%;
+	height:100%;
+}
+.middle .content .content-body .content-setMsg .setting-content #tabF{
+	text-indent:1em;
+	margin-top:20px;
+	width:100%;
+	height:100%;
+	border:1px solid #ccc;	
+}
+#tabF #myF{
+	margin-top:20px;
+}
+#tabF #fZH{
+	margin-top:20px;
+}
+
+/*照片设置*/
+#pContent{
+	width:100%;
+	height:100%;
+}
+#searchPhoto{
+	width:100%;
+	height:100%;
+}
+.middle .content .content-body .content-setMsg .setting-content #tabP{
+	text-indent:1em;
+	margin-top:20px;
+	width:100%;
+	height:100%;
+}
+#tabP #myP{
+	margin-top:20px;
+}
+#tabP #friendP{
+	margin-top:20px;
+}
+
+/*日记设置*/
+#dContent{
+	width:100%;
+	height:100%;
+}
+#myDateData{
+	width:100%;
+	height:100%;
+}
+.middle .content .content-body .content-setMsg .setting-content #tabD{
+	text-indent:1em;
+	margin-top:20px;
+	width:100%;
+	height:100%;
+}
+#tabD #myD{
+	margin-top:20px;
+}
+/*记录设置*/
+#tContent{
+	width:100%;
+	height:100%;
+}
+#myTalkData{
+	width:100%;
+	height:100%;
+}
+.middle .content .content-body .content-setMsg .setting-content #tabT{
+	text-indent:1em;
+	margin-top:20px;
+	width:100%;
+	height:100%;
+}
+#tabT #myT{
+	margin-top:20px;
+}
+#tabT #FTD{
+	margin-top:20px;
+}
+/*礼物页面设置*/
+#gContent{
+	width:100%;
+	height:100%;
+}
+#myGiftData{
+	width:100%;
+	height:100%;
+}
+.middle .content .content-body .content-setMsg .setting-content #tabG{
+	text-indent:1em;
+	margin-top:20px;
+	width:100%;
+	height:100%;
+	border:1px solid #ccc;	
+}
+#tabG #myG{
+	margin-top:20px;
+}
+#tabG #sendG{
+	margin-top:20px;
+}
+
+#zymyPic{
+	position:relative;
+	left:46%;
+	top:-28px;
+	filter:alpha(opacity=0);
+	opacity: 0;
+	-moz-opacity:0;
+	width:160px;
+	height:28px;
+	z-index:100;
+}
+#zymyPic2{
+	width:160px;
+	height:28px;
+	line-height:28px;
+	background:#336699;
+	color:#fff;
+	position:relative;
+	left: 46%;
+	top:-56px;
+}
+.button1{
+	width:60px;
+	height:28px;
+	line-height:28px;
+	background:#336699;
+	color:#fff;
+	position:relative;
+	left: 48%;
+	top:-56px;
+}
+#Button1{
+	background:#fff;
+	color:#ccc;
+	font-size:12px;
+}
+.black_overlay{
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index:1001;
+	-moz-opacity: 0.8;
+	opacity:.80;
+	filter: alpha(opacity=80);
+}
+.white_content {
+	display: none;
+	position: absolute;
+	top: 6%;
+	left: 10%;
+	width: 80%;
+	height: 80%;
+	border: 8px solid lightblue;
+	border-radius: 10px 10px 0 0;
+	background-color: white;
+	z-index:1002;
+	overflow: auto;
+}
+.white_content_small {
+	display: none;
+	position: absolute;
+	top: 20%;
+	left: 30%;
+	width: 40%;
+	height: 60%;
+	border: 16px solid lightblue;
+	background-color: white;
+	z-index:1002;
+	overflow: auto;
+}
+.close{
+	margin-right:10px;
+}
+.zyimg{
+	margin-left:20px;
+	margin-top:20px;
+	border:2px solid #ccc;
+}

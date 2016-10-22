@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>我是大画家</title>
+<script src="../js/jquery-2.0.3.js"></script>
+<style type="text/css">
+    #canvas {
+        margin: 50px auto;
+        display: block;
+    }
+    .tool {
+        width: 245px;
+        height: 176px;
+        position: absolute;
+        right: 170px;
+        top: 50px;        
+    }
+    .tool p{
+        width:245px;
+        height:30px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 30px;
+        background-color: #85a4ce;
+        position: absolute;
+        border-radius: 7px 7px 0px 0px;
+    }
+    .tool .form_{
+        width:245px;
+        height: 160px;
+        background-color: #d0d6e4;
+        position: absolute;
+        top:45px;
+        border-radius:0px 0px 7px 7px;
+        text-align: center;
+    }
+    #lineColor,#eraser,#clear{
+    font-size: 15px;
+    background-color: #85a4ce;
+    border: 1px solid #85a4ce;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    cursor: pointer;
+    }
+    label{
+        color:#4D81C6;
+        font-size: 15px;
+        font-weight: bold;
+    }
+    a{
+        font-size:16px;
+        color:#336699;
+    }
+</style>
+</head>
+
+<body>
+<!------------------------canvas的作图-------------------------->
+<p><a href="index.html">返回首页</a></p>
+<canvas id="canvas">
+    你的浏览器不可以玩我们的游戏哦，换一个浏览器吧
+</canvas>
+
+<div class="tool">
+    <p>工具箱</p>
+    <form class="form_">
+        <label for="lineWidth">画笔大小
+            <input id="lineWidth" name="lineWidth" type="range" min="1" max="30" step="1" value="6" onchange="displayWidth.value=this.value" />
+            <output name="displayWidth">6</output>
+        </label><br /><br />
+         <label for="lineColor">画笔颜色
+            <input id="lineColor" type="color" name="lineColor" />
+        </label><br /><br />
+        <input id="eraser" style="width:60px;font-size:14px;"type="button" value="橡皮擦" /><br /><br />
+       <input id="clear" type="button" value="清除画布"/>  
+    </form>
+</div>
+<script>
+    //定义canva的大小
+    var canvasWidth = 500;
+    var canvasHeight = canvasWidth;
+    //定义变量
+    var flag = false;
+    var lastLoc = {
+        x: 0,
+        y: 0
+    };
+
+    //得到context环境
+    var canvas = document.getElementById("canvas"); //取出界面上的画布元素
+    var context = canvas.getContext("2d"); //取出画布的工作的上下文(环境)
+
+    //设置canvas的大小
+    canvas.width = canvasWidth;
+    canvas.height = canvasHeight;
+
+    //绘制基本 
+    draw(); //定义一个画的函数
+    function draw() {
+        context.save(); //保存当前状态
+        //这一段canvas的属性，只会在这一段起作用
+        context.strokeStyle = "#85a4ce"; //定义颜色
+        context.beginPath(); //开始绘制，记录路径
+        context.moveTo(0, 0); //移动到此点
+        context.lineTo(canvasWidth, 0); //绘制至此点
+        context.lineTo(canvasWidth, canvasHeight);
+        context.lineTo(0, canvasHeight);
+        context.closePath(); //绘制路径结束
+        context.lineWidth = 6; //画笔粗细
+        context.stroke(); //显示到canvas里面
+    }
+
+    //用户开始绘制
+    canvas.onmousedown = function (e) {
+        delDefault(e);
+        flag = true;
+        lastLoc = windowToCanvas(e.clientX, e.clientY);
+    }
+    canvas.onmouseup = function (e) {
+        delDefault(e);
+        flag = false;
+    }
+    canvas.onmouseout = function (e) {
+        delDefault(e);
+        flag = false;
+    }
+    canvas.onmousemove = function (e) { //重点在鼠标按下的移动
+        delDefault(e);
+        if (flag) {
+            //开始绘制
+            var curLoc = windowToCanvas(e.clientX, e.clientY);
+            context.beginPath();
+            context.moveTo(lastLoc.x, lastLoc.y);
+            context.lineTo(curLoc.x, curLoc.y);
+            context.strokeStyle = $("#lineColor").val();
+            context.lineWidth = $("#lineWidth").val();
+            context.lineCap = "round"; //定义线的结束位置形状为圆角
+            context.lineJoin = "round"; //定义线的形状为圆角
+            context.closePath();
+            context.stroke();
+            lastLoc = curLoc; //结束位置应该是下一次的开始位置
+        }
+    }
+    //橡皮擦
+    $("#eraser").click(function(){
+       
+        context.strokeStyle = "#fff";
+        
+    })
+    
+    //清空  
+    $("#clear").click(function(){
+        context.setTransform(1, 0, 0, 1, 0, 0);
+        context.clearRect(3, 3, context.canvas.width-6, context.canvas.height-6);
+    });
+    
+    
+    //阻止浏览器的默认行为
+    function delDefault(event) {
+        if (window.event) {
+            e = window.event;
+            e.returnValue = false; //IE中的
+            e.preventDefault(); //其他浏览器
+        } else {
+            event.preventDefault();
+        }
+    }
+    //坐标转换
+    function windowToCanvas(x, y) {
+        var box = canvas.getBoundingClientRect(); //获得canvas的left和top
+        return {
+            x: Math.floor(x - box.left),
+            y: Math.floor(y - box.top)
+        };
+    }
+   
+</script>
+
+</body>
+
+</html>

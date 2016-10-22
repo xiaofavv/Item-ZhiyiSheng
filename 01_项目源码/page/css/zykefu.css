@@ -1,0 +1,148 @@
+*{
+			padding: 0;
+			margin: 0 auto;
+		}
+		body{
+			background-color: #F4F4F4;
+		}
+		.header{
+			width:100%;
+			height:48px;
+			background: #F8F8F8;
+		}
+      	.headerimg{
+        margin-left: 200px;
+        margin-top: 8px;
+      }
+       .headerul{
+        margin-left:76%;
+        list-style: none;
+        margin-top: -50px;
+
+      }
+      .headerul li{
+        margin-left: 12px;
+        float: left;
+
+      }
+	  .headerul li a{
+		  color:#336699;
+	  }
+		.main{
+			width: 980px;
+			height: 540px;
+			background: #fff;
+		}
+		.left{
+			float: left;
+			width: 22%;
+			height:540px;
+		}
+		.right{
+			float: left;
+			width: 78%;
+			height:540px;
+		}
+		ul li{
+			list-style: none;
+			color: #336699;
+			font-size: 14px;
+			margin-top: 20px;
+			margin-left: 16px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+		li:hover{
+			text-decoration: underline;
+			color:blue;
+		}
+		#d2{
+			width:100%;
+			height:100%;
+			position: relative;
+			
+		}
+		#d2 p{
+			height:auto; 
+			width: 80%;
+			margin-top: 20px;
+			margin-left: 0px;
+		}
+		#d3{
+			width:100%;
+			height:100%;
+			position: relative;
+			display:none;
+		}
+		#d3 p{
+			height: 80px;
+			line-height: 20px;
+		}
+		#d3 .d3span{
+			font-size: 12px;
+			color: #336699;
+			margin-left: 30px;
+			height:20px;
+			line-height: 20px;
+		}
+		#d4{
+			width:100%;
+			height:100%;
+			position: relative;
+			display:none;
+		}
+		.d4zy1{
+			border-bottom: 1px solid #ccc;
+			margin-top:20px;
+			height: 40px;
+			line-height: 40px;
+			font-size: 14px;
+			font-weight: bold;
+			padding-left:40px;
+		}
+		 p{
+			font-size:12px;
+			width: 100%;
+			height: 30px;
+			line-height: 30px;
+			padding-left:40px;
+		}
+		.d4p1{
+			margin-top: 20px;
+			margin-bottom: 14px;
+		}
+		.d4p5{
+			color: #999;
+			margin-left:64px;
+			line-height: 20px;
+			width: 74%;
+		}
+		.d4zyimg{
+			position: absolute;
+			left:-10px;
+		}
+		#d4 .d4a{
+			position:absolute;
+		}
+		#d5{
+			width:100%;
+			height:100%;
+			position: relative;
+			display:none;
+		}
+		#d5 .d4p5{
+			margin-left: 0px;
+
+		}
+		#d5 textarea{
+			position: absolute;
+		}
+		#d5 #btn{
+			margin-top:120px;
+			margin-left:100px;
+			width: 76px;
+			height: 28px;
+			background:#85A4CE;
+			color: #fff;
+			font-size: 14px;
+		}

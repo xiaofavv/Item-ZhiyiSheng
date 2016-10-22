@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <!--使用最高级别的可用模式显示内容-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--移动端的视窗大小和我们的页面是同一个尺寸，为移动端做准备（包含头部信息用于适应不同设备）-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- TemplateBeginEditable name="doctitle" -->
+    <title>我的首页 - 吱一声</title>
+    <!-- Bootstrap -->
+    <link href="../css/resert.css" rel="stylesheet" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="../css/PagePerson.css" />
+    <link rel="short icon" href="images/logo.png" />
+    <!-- TemplateEndEditable -->
+</head>
+<body>
+    <!--菜单栏-->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="" class="navbar-brand"><img src="images/menulogo.png" /></a>
+            </div>
+            <form class="navbar-form navbar-left">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="搜索你感兴趣的吧" />
+                <span class="input-group-addon"><a href=""><span class="glyphicon glyphicon-search"></span></a>
+                </span>
+                </div>
+            </form>
+            <ul class="nav navbar-nav ">
+                <li><a href=""><span class="glyphicon glyphicon-home " ></span>首页</a></li>
+                <li><a href=""><span class="glyphicon glyphicon-tree-conifer"></span>个人主页</a></li>
+                <li><a href=""><span class="glyphicon glyphicon-heart-empty"></span>好友</a></li>
+                <li><a href=""><span class="glyphicon glyphicon-picture"></span>照片</a></li>
+                <li><a href=""><span class="glyphicon glyphicon-comment"></span>消息<span class="badge" id="badge">1</span></a></li>
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>账户<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href=""><span class="glyphicon glyphicon-cog"></span>账户设置</a> </li>
+                        <li><a href=""><span class="glyphicon glyphicon-euro"></span>吱币充值</a> </li>
+                        <li><a href=""><span class="glyphicon glyphicon-off"></span>退出</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-font"></span>关于我们<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href=""><span class="glyphicon glyphicon-hand-right"></span>团队介绍</a> </li>
+                        <li><a href=""><span class="glyphicon glyphicon-fire"></span>团队文化</a> </li>
+                        <li><a href=""><span class="glyphicon glyphicon-cutlery"></span>加入我们</a></li>
+                        <li><a href=""><span class="glyphicon glyphicon-earphone"></span>客服</a></li>
+                        <li><a href=""><span class="glyphicon glyphicon-tree-deciduous"></span>意见反馈</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+
+    </nav>
+
+    <div class="middle">
+        <div class="content">
+            <div class="content-body">
+            	<!-- TemplateBeginEditable name="content" -->
+                <div class="content-left">
+                    <ul class="P-List">
+                        <li><i class="glyphicon glyphicon-picture"></i> 我的照片 </li>
+                        <li><i class="glyphicon glyphicon-pencil"></i> 我的日记 </li>
+                        <li><i class="glyphicon glyphicon-comment"></i> 我的记录 </li>
+                        <li><i class="glyphicon glyphicon-share"></i> 我的转帖 </li>
+                        <li><i class="glyphicon glyphicon-hdd"></i> 我的网盘 </li>
+                        <li><i class="glyphicon glyphicon-gift"></i> 我的礼物 </li>
+                    </ul>
+                </div>
+                <div class="content-center">
+
+                </div>
+                <div class="content-right">
+
+                </div>
+                <!-- TemplateEndEditable -->
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+
+    </div>
+	<!-- TemplateBeginEditable name="script" -->
+    <!--bootstrap是基于jquery的，所以要先引入jquery-->
+    <script src="../js/jquery-2.0.3.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/PagePerson.js"></script>
+    <!-- TemplateEndEditable -->
+</body>
+</html>

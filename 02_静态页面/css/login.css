@@ -1,0 +1,114 @@
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+.logo{
+	width:251px;
+	height:98px;
+	background: url(../images/logo1.png) no-repeat;
+	background-size:cover;
+	margin:0 0 0 320px;
+	float:left;	
+	}	
+.content{
+	width:419px;
+	height:317px;
+	border:#eee 2px solid;
+	background-color:#fff;
+	border-radius:5px;
+	margin:170px 0 0 780px;
+	}
+.c_top{
+	 width:419px;
+	 height:50px;
+	 }
+.c_top span {
+	display:inline-block;
+    font-size:25px;
+	height:50px;
+	line-height:50px;
+	color:#333;
+    margin-top: 20px;
+	}
+	
+.c_form{
+	width:272px;
+	height:200px;
+	margin:40px auto 0;
+	}
+#unamediv,#pwddiv{
+	width:269px;
+	height:40px;
+	border: 1px solid #ccc;
+    border-radius:4px;
+	margin-bottom:13px;
+	}
+#uname,#pwd{
+	background:none;
+	border:none;
+	width:258px;
+	height:18px;
+	line-height:18px;
+	padding:11px 0 11px 11px;
+	}
+
+#subdiv{ 
+	height:40px;
+	width:100%;
+	}	
+#sub{
+	width:100%;
+	height:35px;
+	border:none;
+	background:none;
+	background-color:#85A4CE;
+	color:#fff;
+	font-size:16px;
+	font-weight:bold;
+	border-radius:3px;
+    cursor: pointer;
+	}
+	
+.c_bottom{
+	float:right;
+	font-size:12px;
+	color:#666;
+	margin-right:20px;
+	}
+.c_bottom a{color:#666;}	
+.c_bottom a:hover{text-decoration: underline;}
+
+/*尾部*/
+.foot {
+    width: 100%;
+    height: 8%;
+    
+    position: absolute;
+    bottom: 0px;
+}
+
+.foot .foot_us {
+    color: #000;
+    text-align: center;
+    font-size: 13px;
+    padding-top: .5em;
+}
+
+.foot .foot_link {
+    color: #000;
+    font-size: 13px;
+    word-break: break-all;
+    /*允许在单词内换行*/
+    text-align: center;
+    margin-top: -.5em;
+}
+
+.foot_link .link_1 {
+    color: #000;
+    margin-bottom: .1em;
+}
+
+.link_1 a {
+   color: #000;
+}

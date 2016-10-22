@@ -1,0 +1,243 @@
+/*内容部分*/
+.middle{
+    width:100%;
+    margin-top:-20px;
+	position:relative;
+}
+.middle .content{
+    width:85%;
+    margin:0 auto;
+}
+/*个人首页封面*/
+.middle .content .content-head{
+    width:100%;
+    height:260px;
+    background-size: cover;
+    position: relative;
+}
+/*设置封面*/
+.middle .content .content-head .setHeadPic{
+    position: absolute;
+    width:150px;
+    height:200px;
+    top:1em;
+    right:2em;
+}
+.middle .content .content-head .setHeadPic .headIcon{
+    float: right;
+    width:100px;
+    height:30px;
+    line-height: 30px;
+    color:white;
+    text-align: center;
+    background-color: #d5d5d5;
+    border-radius: 5px;
+    border:2px solid #9d9d9d;
+    opacity: 0.9;
+    filter:alpha(opacity=0.9);
+    font-family: "Adobe 宋体 Std L";
+    cursor: pointer;
+}
+.middle .content .content-head .setHeadPic .headIcon i{
+    margin:0;
+    color:#fff;
+}
+.middle .content .content-head .setHeadPic #setPicList{
+    float: left;
+    width:150px;
+    height:80px;
+    background-color: #ffffff;
+    z-index:20;
+    display:none;
+}
+.middle .content .content-head .setHeadPic #setPicList li{
+    height:40px;
+    width:100%;
+    line-height: 40px;
+    color: #5e5e5e;
+    text-align: center;
+    border-bottom:1px solid #c0c0c0;
+    cursor: pointer;
+}
+.middle .content .content-head .setHeadPic #setPicList li:hover{
+    color: #31b0d5;
+}
+/*头像部分*/
+.middle .content .content-head .Person{
+    width:100%;
+    height:200px;
+    position:absolute;
+    bottom: -100px;
+}
+.middle .content .content-head .Person .PersonPic{
+    float: left;
+    padding-left: .8em;
+    border-bottom:1px solid #cccccc;
+    width:15%;
+    height:200px;
+}
+.middle .content .content-head .Person .PersonPic .P-Pic{
+    width:150px;
+    height:150px;
+    border:5px solid pink;
+    border-radius: .5em;
+    cursor: pointer;
+}
+.middle .content .content-head .Person .PersonPic p{
+    width:150px;
+    height:30px;
+    line-height: 30px;
+    margin:10px 0;
+}
+.middle .content .content-head .Person .PersonPic p .changePic{
+    color:#fff;
+    float: left;
+    cursor: pointer;
+    width:50%;
+    text-align: center;
+}
+.middle .content .content-head .Person .PersonPic p .changePic:hover{
+    background-color:#cbd3e6;
+}
+.middle .content .content-head .Person .PersonPic p .editMsg{
+    display: block;
+    color:#fff;
+    float: right;
+    cursor: pointer;
+    width:50%;
+    text-align: center;
+}
+.middle .content .content-head .Person .PersonPic p .editMsg:hover{
+    background-color:#cbd3e6;
+}
+.middle .content .content-head .Person .PersonMsg{
+    width:50%;
+    float: left;
+    height:50%;
+    color: #ffffff;
+    margin-left: 2em;
+}
+/*头像昵称部分*/
+.middle .content .content-head .Person h2{
+    margin:0;
+    width:200px;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    -o-text-overflow:ellipsis;
+    overflow:hidden;
+}
+.middle .content .content-head .Person .Msg{
+    width:100%;
+    height:25px;
+    line-height: 25px;
+}
+.middle .content .content-head .Person .Msg i{
+    margin:0;
+    color:#fff;
+}
+.middle .content .content-head .Person .Msg li{
+    float: left;
+    margin-right: 10px;
+}
+.middle .content .content-head .Person .Msg .detailMsg{
+    display: block;
+    width:100px;
+    background-color: #c0c0c0;
+    border:2px solid #9d9d9d;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+
+/*内容左边*/
+.middle .content .content-body .content-left{
+    width:170px;
+    height:100%;
+    float: left;
+    padding-top:120px;
+    text-indent: 1.5em;
+}
+.middle .content .content-body .content-left .P-List{
+	width:100%;
+}
+.middle .content .content-body .content-left .P-List li{
+    width:100%;
+    height:30px;
+    line-height: 30px;
+    cursor: pointer;
+    color: #fff;
+}
+.middle .content .content-body .content-left .P-List li a{
+    text-decoration: none;
+    color:#fff;
+}
+.middle .content .content-body .content-left .P-List li:hover{
+    background-color: #cbd3e6;
+}
+.middle .content .content-body .content-left .P-List i{
+    color: #fff;
+    margin:0;
+    padding-left:5px;
+}
+
+
+#personData{
+    width:95%;
+    margin:0 auto;
+}
+
+
+/*------------------------------------尾部-------------------------------*/
+
+.foot {
+    width: 100%;
+    height: 8%;
+    background: #F8F8F8;
+    position: relative;
+    bottom: 0px;
+}
+
+.foot .foot_us {
+    color: #333;
+    text-align: center;
+    font-size: 13px;
+    padding-top: .5em;
+}
+
+.foot .foot_link {
+    color: #333;
+    font-size: 13px;
+    word-break: break-all;/*允许在单词内换行*/
+    text-align: center;
+    margin-top: -.5em;
+}
+
+.foot_link .link_1 {
+    color: #999;
+    margin-bottom: .1em;
+}
+
+.link_1 a {
+    color: #999;
+}
+/*-------------------------------------------------------------*/
+/*内容主体部分*//*有修改*/
+.middle .content .content-body{
+    width:100%;
+    min-height:800px;
+}
+/*内容中间*//*有修改*/
+.middle .content .content-body .content-center{
+    width:70%;
+    border-left:1px solid #cccccc;
+    float: left;
+}
+/*有修改*/
+.middle .content .content-body .content-right{
+    width:15%;
+    height:100%;
+    float: left;
+}
+

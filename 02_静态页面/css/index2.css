@@ -1,0 +1,478 @@
+body {
+    background: url(../images/body_bg.jpg) no-repeat;
+    background-size: 100% 100%;
+    padding-top: 70px !important;
+}
+
+
+/*菜单栏*/
+
+.navbar-header {
+    margin-top: -5px;
+}
+
+
+/*图标*/
+
+.glyphicon {
+    margin: auto 10px;
+    color: #85A4CE;
+}
+
+
+/*消息*/
+
+#badge {
+    background-color: red;
+}
+
+
+/*内容*/
+
+.content {
+    width: 80%;
+    /*height: 800px;*/
+    background-color: rgba(70, 149, 194, 0.3);
+    margin: 0px auto;
+    overflow: hidden;
+}
+
+
+/*----------------------------内容左侧---------------------------*/
+
+.content .content_left {
+    margin-top: 1.66%;
+    width: 14%;
+    height: 240px;
+    float: left;
+    position: fixed;
+    left: 10%;
+}
+
+
+/*左侧图标*/
+
+.content .content_left .glyphicon {
+    color: #fff;
+    font-size: 20px;
+}
+
+.content_left ul {
+    width: 100%;
+}
+
+.content_left ul li {
+    margin-bottom: 20px;
+}
+
+.content_left ul li a {
+    display: block;
+    width: 100%;
+    color: #fff;
+    font-size: 20px;
+}
+
+.content_left ul li a:hover {
+    background-color: #CBD3E6;
+    text-decoration: none;
+}
+
+
+/*游戏菜单*/
+
+.content_left .dropdown-menu {
+    background-color: #A8C2D8;
+    border: none;
+}
+
+.content_left .dropdown-menu li {
+    width: 100%;
+    height: 20%;
+    margin-bottom: 10px;
+}
+
+.content_left .dropdown-menu li a {
+    font-size: 14px;
+}
+
+
+/*----------------------------------------内容中间-----------------------*/
+
+.content .content_middle {
+    margin-top: 2%;
+    width: 59%;
+    margin-right: 1%;
+    height: 98%;
+    float: left;
+    position: relative;
+    left: 17.4%;
+}
+
+.content_middle .publish {
+    width: 100%;
+    height: 19%;
+    background-color: #fff;
+    border-radius: 7px;
+}
+
+#publish_p {
+    text-align: left;
+    margin-left: 1%;
+    padding-top: 1%;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+publish .com_form {
+    width: 100%;
+    position: relative
+}
+
+.com_form .saytext {
+    width: 98%;
+    height: 60px;
+    border: 1px solid #ccc
+}
+
+.com_form p {
+    height: 30px;
+    width: 99%;
+    line-height: 28px;
+    position: relative;
+    margin-top: 10px;
+}
+
+.com_form p .emotion {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url(../images/xf_5.gif) no-repeat 2px 2px;
+    padding-left: 20px;
+    cursor: pointer
+}
+
+.com_form p .pic_ {
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 100px;
+    width: 24px;
+    height: 24px;
+    background: url(../images/xf_6.png) no-repeat;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.qqFace {
+    margin-top: 4px;
+    background: #fff;
+    padding: 2px;
+    border: 1px #dfe6f6 solid;
+}
+
+.qqFace table td {
+    padding: 0px;
+}
+
+.qqFace table td img {
+    cursor: pointer;
+    border: 1px #fff solid;
+}
+
+.qqFace table td img:hover {
+    border: 1px #0066cc solid;
+}
+
+#show {
+    width: 770px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 5px;
+    border: 1px solid #DDD;
+    vertical-align: top;
+}
+
+.sub_btn {
+    position: absolute;
+    right: 0px;
+    top: 0;
+    display: inline-block;
+    zoom: 1;
+    /* zoom and *display = ie7 hack for display:inline-block */
+    *display: inline;
+    vertical-align: baseline;
+    margin: 0 2px;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    padding: .5em 2em .55em;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .6);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+    color: #e8f0de;
+    border: solid 1px #538312;
+    background: #64991e;
+    background: -webkit-gradient(linear, left top, left bottom, from(#7db72f), to(#4e7d0e));
+    background: -moz-linear-gradient(top, #7db72f, #4e7d0e);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#7db72f', endColorstr='#4e7d0e');
+}
+
+.sub_btn:hover {
+    background: #538018;
+    background: -webkit-gradient(linear, left top, left bottom, from(#6b9d28), to(#436b0c));
+    background: -moz-linear-gradient(top, #6b9d28, #436b0c);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#6b9d28', endColorstr='#436b0c');
+}
+
+/*全部动态/好友动态*/
+.content_middle .dongtai {
+    margin-top: 10px;
+}
+
+#allDynamic{
+   width: 100%;
+   background-color: #D0D6E4;
+}
+
+
+
+
+/*头像+昵称+时间*/
+.talk_user .talk_1 {
+    width: 70%;
+    height: 53px;
+    position: relative;
+}
+.talk_1 .talk_img {
+    border-radius: 50%;
+    position: absolute;
+    left: 0px;
+}
+.talk_1 strong {
+    color: #000;
+    font-size: 12px;
+    position: absolute;
+    left: 52px;
+    top: 10px;
+}
+
+.talk_1 p {
+    color: #333;
+    font-size: 12px;
+    position: absolute;
+    left: 52px;
+    top: 30px;
+}
+.talk_user .talk_2 {
+   width: 100%;
+    margin-top: -10px;
+    position: relative;
+}
+.talk_2 .trangle {
+    display: inline-block;
+    width: 17px;
+    height: 14px;
+    background-image: url(../images/sucai.png);
+    background-repeat: no-repeat;
+    background-position: 0px -30px;
+    position: absolute;
+    left: 40px;
+}
+
+
+/*--------------------------内容右侧------------------------------------*/
+
+.content .content_right {
+    margin-top: 2%;
+    width: 22.3%;
+    height: 100%;
+    float: left;
+    position: relative;
+    right: -17%;
+    border: 1px solid red;
+}
+
+
+/*个人信息栏*/
+
+.myInfo {
+    width: 100%;
+    height: 205px;
+}
+
+.myInfoBg {
+    width: 100%;
+    height: 45%;
+    background: url(../images/myInfoBg_1.png) no-repeat;
+}
+
+.myInfoPic {
+    width: 64px;
+    height: 64px;
+    padding: 2px;
+    background: rgba(255, 255, 255, 0.3) none repeat scroll 0 0;
+    position: absolute;
+    left: 35%;
+    top: 17%;
+    border-radius: 50%;
+}
+
+.myInfoImg {
+    border-radius: 50%;
+}
+
+.myInfoAll {
+    width: 100%;
+    height: 55%;
+    background-color: #fff;
+}
+
+
+/*用户名*/
+
+#myInfoName {
+    font-size: 1em;
+    font-weight: bold;
+    height: 40%;
+    line-height: 2em;
+    padding-top: 8%;
+    text-align: center;
+}
+
+#myInfoName a {
+    color: black;
+}
+
+#myInfoName a:hover {
+    color: #85A4CE;
+    text-decoration: none;
+}
+
+.myInfoStn {
+    height: 60%;
+}
+
+.myInfoStn .stn {
+    border-right: 1px solid #999;
+    float: left;
+    margin: 8% 1%;
+    width: 30%;
+}
+
+.myInfoStn .stn_last {
+    float: left;
+    margin: 8% 1%;
+    width: 30%;
+}
+
+.myInfoStn .stn_span {
+    color: #ccc;
+    display: block;
+}
+
+
+/*天气栏*/
+
+#weatherInfo {
+    width: 100%;
+    height: 70px;
+    margin-top: 4%;
+}
+
+#weatherInfo .weather_font {
+    color: #fff;
+}
+
+
+/*大家都在聊什么*/
+
+.content .content_right .talking {
+    width: 100%;
+    height: 415px;
+    margin-top: 4%;
+    background-size: cover;
+    border: 1px solid black;
+    background-image: url(../images/talkingBg.png);
+}
+
+
+/*谈论区*/
+
+.talking .talk_area {
+    width: 100%;
+    height: 70%;
+    overflow: auto;
+}
+
+
+
+/*------------------------------------尾部-------------------------------*/
+
+.foot {
+    width: 100%;
+    height: 8%;
+    background: #F8F8F8;
+    position: relative;
+    bottom: 0px;
+}
+
+.foot .foot_us {
+    color: #333;
+    text-align: center;
+    font-size: 13px;
+    padding-top: .5em;
+}
+
+.foot .foot_link {
+    color: #333;
+    font-size: 13px;
+    word-break: break-all;/*允许在单词内换行*/
+    text-align: center;
+    margin-top: -.5em;
+}
+
+.foot_link .link_1 {
+    color: #999;
+    margin-bottom: .1em;
+}
+
+.link_1 a {
+    color: #999;
+}
+
+/*---------------------有修改----------------*/
+.showDynamic {
+    line-height: 30px;
+    color: #000;
+    font-size: 13px;
+    text-indent: 26px;
+    background-color: #fff;
+    width: 550px;
+    min-height: 13px;
+    position: absolute;
+    left: 30px;
+    top: 10px;
+    text-align: left;
+}
+.showDynamic img{
+    width:100px;
+    height:100px;
+    margin-left:2em;
+}
+
+/*一个的用户记录模版*/
+.talk_user {
+    width: 90%;
+    min-height: 200px;
+    margin: 2% 4%;
+}
+.dynamic{
+    width: 100%;
+    background-color: #D0D6E4;
+    min-height:200px;
+}

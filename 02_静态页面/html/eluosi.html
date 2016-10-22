@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>canvas制作俄罗斯方块</title>
+		<style>
+			#canvas{
+				background-color:brown;
+				position: absolute;
+				top:0px;
+				left: 0px;
+				right: 0px;
+				bottom: 0px;
+				margin: auto;
+				box-shadow: 0px 0px 30px #666666;
+			}
+			a{
+				font-size:16px;
+				color:#336699;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="index.html">回到首页</a>
+		<canvas width="500" height="500" id="canvas"></canvas>
+
+		<script>
+			var canvas=document.getElementById("canvas");
+			//获取绘制对象
+			var gc=canvas.getContext("2d");
+			//创建数组
+			var data=map(12,12);//定义几行几列，返回的是一个二维数组
+			
+			var y=0;//定义方块距上的行数，通过定时器控制小方块向下移动
+			var x=4;//定义方块距右的列数，通过键盘事件控制小方块左右移动
+			var matrix=mold();//移动的方块肯定就是当前生成的方块
+			//画面板
+			render(data,gc);
+			create(matrix);
+			play();
+			
+			//方块变形
+			function rotate(){
+				var arr=[];//用来存储小方块变形后的数据
+				var y=matrix.length;//变形之前的小方块所占的行数
+				var x=matrix[0].length;//变形之前的小方块所占的列数
+				for(var i=0;i<x;i++){//遍历 变形之前的小方块的列数
+					arr.push([]);//将列数存为变形后数据的行数
+				}
+				//调换数据
+				for(var i=0;i<y;i++){//遍历 变形之前的小方块所占的行数
+					for(var j=0;j<x;j++){//遍历 变形之前的小方块所占的列数
+						//	变形前			变形后
+						//[1,0][1,1][1,0]->[1,1,1][0,1,0]
+						//旋转后即为：
+						//	变形前			变形后
+						//matrix[2][0]	->	arr[0][0]
+						//matrix[1][0]	->	arr[0][1]
+						//matrix[0][0]	->	arr[0][2]
+						//可以看出变形后的行索引即变形前的列索引，而变形后的列索引则是 倒过来的变形前的行索引，才能实现旋转变形的效果
+						arr[j][y-1-i]=matrix[i][j];//总行数减1即为变形前的小方块行的最大索引，然后减去它此时的行索引，就可以得到倒过来的变形前小方块的行索引，这个即为变形后小方块的列索引
+					}
+				}
+				//互换完毕
+				matrix=arr;//修改移动的小方块的数据
+			}
+			
+			function play(){
+				document.onkeydown=function(event){
+					switch(event.keyCode){
+						case 37:	//向左移动
+							clearPre(matrix);//清除它之前移动的效果     data[][]=1 ==> data[][]=0
+							//键盘左键按下方块向左移动一个距离
+							x--;
+							if(x<0){//使方块移动不溢出
+								x=0;
+							}
+							create(matrix);//重新生成一次页面，造成方块左移的效果
+							
+							break;
+						case 39:	//向右移动
+							clearPre(matrix);//清除它之前移动的效果     data[][]=1 ==> data[][]=0
+							//键盘右键按下方块向右移动一个距离
+							x++;//方块距右的距离加1
+							if(x+matrix[0].length>=data[0].length){//使方块移动不溢出   matrix[0].length->方块所占的列数    data[0].length->容器总列数		这句话的意思是方块距右的列数加上方块本身的列数如果大于等于容器总列数	
+								x=data[0].length-matrix[0].length;
+							}
+							create(matrix);//重新生成一次页面，造成方块右移的效果
+							break;
+						case 38:	//向上变形
+							clearPre(matrix);//清除它之前移动的效果     data[][]=1 ==> data[][]=0
+							rotate(matrix);//控制变形的函数
+							create(matrix);//重新生成一次页面，造成方块变形的效果
+							break;
+						case 40:
+							break;
+					}
+				}
+			}
+			
+			setInterval(function(){//设置定时器控制小方块移动
+				fall();
+			},400);
+			
+			
+			//移动
+			function fall(){
+				//判断当前这个小方块，如果移动到了最底部就定下，并且重新生成一个小方块
+				if(touchTest()){
+					y=0;//就停止移动
+					x=4;//在生成的时候把x重置为4，使它在中心生成
+					matrix=mold();//重新在最上面生成一个新的方块
+				}
+				//清除上一行的数据
+				clearPre(matrix);
+				//如果没有，则向下移动
+				y++;
+				create(matrix);//重新创建一次页面，造成小方块移动的效果
+			}
+			
+			
+			//除了检测到达底部之外，还要检测是否与其它的方块碰撞
+			function touchTest(){
+				var len=matrix.length;//生成的方块的行数
+				if(y+len>=data.length){//如果距上的行数加上方块本身所占的行数大于等于容器总行数，即方块到达底部
+					return true;
+				}
+				for(var i=len-1;i<len;i++){//判断底部碰撞，行只要循环方块的最后一行就行
+					for(var j=0;j<matrix[i].length;j++){
+						//如果它下面的数据为1，那么就说明下面有方块，直接返回true
+						if(matrix[i][j] && data[i+y+1][j+x]==1){//如果这个位置为1且它的底下一个(i+y+1) 的位置也为1
+							return true;//就直接返回true
+						}
+					}
+				}
+				return false;
+			}
+			
+			//清除
+			function clearPre(arr){
+				for(var i=0;i<arr.length;i++){
+					for(var j=0;j<arr[i].length;j++){
+						data[i+y][j+x]=0;
+					}
+				}
+			}
+			
+			//画出来，小方块
+			function create(arr){
+				for(var i=0;i<arr.length;i++){
+					for(var j=0;j<arr[i].length;j++){
+						data[i+y][j+x]=arr[i][j];//加x的原因是不让它在最左边显示，而是空x个格子的中间显示，这里的(i+y)是用来通过定时器控制小方块向下移动的，这里的(i+x)是用来通过键盘控制x值而控制方块向左向右移动的
+					}
+				}
+				render(data,gc);//画完方块之后再画一次面板
+			}
+			
+			//开始绘制面板
+			function render(data,gc){
+				//为什么要减10 -> 10px的间隔
+				var w=(500/12)-10;	//小格子的宽度
+				var h=w;			//小格子的高度
+				
+				var rLen=data.length;		//定义行
+				var cLen=data[0].length;	//定义列
+				
+				for(var i=0;i<rLen;i++){//控制行
+					for(var j=0;j<cLen;j++){//控制列
+						//开始画小格子		方块的颜色为黄色
+						gc.fillStyle=data[i][j]==0?"pink":"yellow";
+						gc.fillRect(j*(w+10)+5,i*(h+10)+5,w,h);//第一个小格子：从(5px,5px)位置开始，画w*h的大小；第二个小格子：从(w+15px,h+5px)位置开始，画w*h的大小；...		=>加的像素是间隔距离
+					}
+				}
+			}
+			
+			
+			function mold(){
+				//生成0~6的随机数作为数组索引值，因为俄罗斯方块中的方块有7中形式
+				var num=Math.floor(Math.random()*7);
+				var arr=[//俄罗斯方块中的方块的七种形式
+					[[1,1,1,1]],
+					[[1,1],[1,1]],
+					[[1,1,0],[0,1,1]],
+					[[1,0,0],[1,1,1]],
+					[[0,1,1],[1,1,0]],
+					[[0,1,0],[1,1,1]],
+					[[0,0,1],[1,1,1]]
+				];
+				//随机生成一个方块
+				return arr[num];
+			}
+			
+			//给地图定义数据
+			//如果小格子的数据为0，则代表没有       如果为1，则代表方块
+			//创建数据
+			function map(r,c){
+				var data=[];
+				for(var i=0;i<r;i++){//控制行
+					data.push([]);//=>data成为二维数组
+					//地图最开始的时候应该是空白的，没有方块，所以所有的数据都应该是0
+					for(var j=0;j<c;j++){//控制列
+						data[i].push(0);
+					}
+				}
+				return data;
+			}
+		</script>
+	</body>
+</html>

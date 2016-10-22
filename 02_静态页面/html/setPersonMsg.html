@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><!-- InstanceBegin template="/Templates/PagePerson.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+    <meta charset="utf-8">
+    <!--使用最高级别的可用模式显示内容-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--移动端的视窗大小和我们的页面是同一个尺寸，为移动端做准备（包含头部信息用于适应不同设备）-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>账户设置 - 吱一声</title>
+    <!-- Bootstrap -->
+    <link href="../css/resert.css" rel="stylesheet" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/index2.css" />
+    <link rel="stylesheet" href="../css/PagePerson.css" />
+    <link rel="stylesheet" href="../css/setPersonMsg.css" />
+    <link rel="short icon" href="../images/logo.png" />
+    <!-- InstanceEndEditable -->
+</head>
+<body>
+    <!--菜单栏-->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="" class="navbar-brand"><img src="../images/menulogo.png" /></a>
+            </div>
+            <form class="navbar-form navbar-left">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="搜索你感兴趣的吧" />
+                    <span class="input-group-addon"><a href=""><span class="glyphicon glyphicon-search"></span></a>
+                    </span>
+                </div>
+            </form>
+            <ul class="nav navbar-nav ">
+                <li><a href="index.html"><span class="glyphicon glyphicon-home " ></span>首页</a></li>
+                <li><a href="PagePerson.html"><span class="glyphicon glyphicon-tree-conifer"></span>个人主页</a></li>
+                <li><a href="javascript:changeRightPage('myFriend','settingF')"><span class="glyphicon glyphicon-heart-empty"></span>好友</a></li>
+                <li><a href="javascript:changeRightPage('myPic','settingP')"><span class="glyphicon glyphicon-picture"></span>照片</a></li>
+                <li><a href=""><span class="glyphicon glyphicon-comment"></span>消息<span class="badge" id="badge">1</span></a></li>
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>账户<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="setPersonMsg.html"><span class="glyphicon glyphicon-cog"></span>账户设置</a> </li>
+                        <li><a href="setPersonMsg.html"><span class="glyphicon glyphicon-euro"></span>吱币充值</a> </li>
+                        <li><a href="javascript:outUserlogin()"><span class="glyphicon glyphicon-off"></span>退出</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-font"></span>关于我们<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="zykefu.html"><span class="glyphicon glyphicon-hand-right"></span>团队介绍</a> </li>
+                        <li><a href="zykefu.html"><span class="glyphicon glyphicon-cutlery"></span>加入我们</a></li>
+                        <li><a href="zykefu.html"><span class="glyphicon glyphicon-earphone"></span>联系客服</a></li>
+                        <li><a href="zykefu.html"><span class="glyphicon glyphicon-tree-deciduous"></span>意见反馈</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="middle">
+        <div class="content" id="content">
+            <div class="content-body">
+            	<!-- InstanceBeginEditable name="content" -->
+                <div class="content-left" id="contentLeft">
+                	<div class="smallPic">
+                    	<img src="../images/zanwu.jpg" alt="个人头像" />
+                        <span id="uname">昵称</span>
+                    </div>
+                    <ul class="P-List" id="P-List">
+                        <li id="setInfo" onclick="showPersonMsg()"><i class="glyphicon glyphicon-cog"></i> 账户设置 </li>
+                        <li id="myPic"><i class="glyphicon glyphicon-picture"></i> 我的照片
+                            <input id="Button1" type="button" value="上传" onclick="ShowDiv('MyDiv','fade')" /></li>
+                        <li id="myDate"><i class="glyphicon glyphicon-pencil"></i> 我的日记 </li>
+                        <li id="myTalk"><i class="glyphicon glyphicon-comment"></i> 我的记录 </li>
+                        <li id="myFriend"><i class="glyphicon glyphicon-hdd"></i> 我的好友 </li>
+                        <li id="myGift"><i class="glyphicon glyphicon-gift"></i> 我的礼物 </li>
+                    </ul>
+                </div>
+                <div class="content-setMsg" id="settingMsg">
+					<div class="setting-head">
+                    	<i class="glyphicon glyphicon-cog"></i>
+                        <span>账户设置</span>
+                    </div>
+                    <div class="setting-content">
+                    	<div class="container" id="container" style="width:54vw;">
+                        	<ul class="nav nav-tabs">
+                                <li class="active"><a href="#mineMsg" data-toggle="tab">我的账户</a></li>
+                                <li><a href="#setMoney" data-toggle="tab" onclick="changezibiPage()">吱币充值</a></li>
+                            </ul>
+                            <ul class="tab-content" id="tab-content"><!--设置选项卡里面的内容-->
+                                <li id="mineMsg" class="tab-pane active">
+                                	<ul id="msgUl">
+                                    	<li class="checkMsg" onClick="setJiBen(this,'jiBen')">基本资料</li>
+                                        <li onClick="setJiBen(this,'geRen')">个人信息</li>
+                                        <li onClick="setJiBen(this,'setMiMa')">修改密码</li>
+                                    </ul>
+                                	<form action="" method="" id="jiBen" style="display:block">
+                                    	<p>
+                                        	<label>账号：</label>
+                                        	<span id="zhanghao"></span>
+                                        </p>
+                                        <p>
+                                        	<label>昵称：</label>
+                                            <input type="text" id="nichen" />
+                                        </p>
+                                        <p>
+                                        	<label>性别：</label>
+                                            <select id="usex">
+                                            	<option value="男">男</option>
+                                                <option value="女">女</option>
+                                            </select>
+                                        </p>
+                                        <p>
+                                        	<label>出生日期(农历)：</label>
+                                            <select name="year">
+                                            </select>年
+                                            <select name="month">
+                                            </select>月
+                                            <select name="day">
+                                            </select>日
+                                        </p>
+                                        <p>
+                                        	<label>血型：</label>
+                                            <select id="ublood">
+                                            	<option value="A型">A型</option>
+                                            	<option value="B型">B型</option>
+                                            	<option value="O型">O型</option>
+                                            	<option value="AB型">AB型</option>
+                                            </select>
+                                        </p>
+                                        <p>
+                                        	<label>婚姻状况：</label>
+                                            <select id="umerry">
+                                            	<option value="单身">单身</option>
+                                                <option value="已婚">已婚</option>
+                                                <option value="恋爱中">恋爱中</option>
+                                            </select>
+                                        </p>
+                                        <p>
+                                            <label>目前身份：</label>
+                                            <select id="uoffice">
+                                                <option value="在工作">工作</option>
+                                                <option value="在学习">学习中</option>
+                                                <option value="其它">其它</option>
+                                            </select>
+                                        </p>
+                                        <p class="baocunP">
+                                        	<input type="button" value="保存修改" onclick="baocunP()" class="btn btn-primary"/>
+                                            <span id="baocunjiben"></span>
+                                        </p>
+                                    </form>
+                                    <form action="" method="" id="geRen" style="display:none">
+                                    	<p>
+                                        	<label>兴趣爱好：</label>
+                                            <input type="text" name="hobby" id="hobby" />
+                                        </p>
+                                        <p>
+                                        	<label>联系电话：</label>
+                                            <input type="text" name="tel" id="tel"/>
+                                            <span style="display:none"><i class='glyphicon glyphicon-ok' style="color:green"></i></span>
+                                            <span style="display:none"><i class='glyphicon glyphicon-remove' style="color:red"></i> 请输入11位数字的电话号码</span>
+                                        </p>
+                                        <p>
+                                        	<label>邮箱：</label>
+                                            <input type="text" name="Email" id="Email"/>
+                                            <span style="display:none;color:green"><i class='glyphicon glyphicon-ok' style="color:green"></i></span>
+                                            <span style="display:none;color:red"><i class='glyphicon glyphicon-remove' style="color:red"></i> 请输入您注册的邮箱</span>
+                                        </p>
+                                        <p>
+                                        	<label>所在地：</label>
+                                            <input type="text" name="address" id="address"/>
+                                        </p>
+                                        <p class="baocunP">
+                                        	<input type="button" value="保存修改" class="btn btn-primary" onclick="baocunGeren()"/>
+                                            <span id="baocunTishi"></span>
+                                        </p>
+                                    </form>
+                                    <form action="" method="" id="setMiMa" style="display:none">
+                                    	<p>
+                                        	<label>原密码：</label>
+                                            <input type="password" name="oldName" id="oldName"/>
+                                        </p>
+                                        <p>
+                                        	<label>新密码：</label>
+                                            <input type="password" name="currentName" id="currentName"/>
+                                        </p>
+                                        <p>
+                                        	<label>确认新密码：</label>
+                                            <input type="password" name="reCurrName" id="reCurrName"/>
+                                        </p>
+                                        <p class="baocunP">
+                                        	<input type="button" value="保存修改" class="btn btn-primary" onclick="showSetMiMaPage()"/>
+                                            <span id="errTishi"></span>
+                                        </p>
+
+                                    </form>
+                                </li>
+                                <li id="setMoney" class="tab-pane">
+                                	<h5>(好消息：新用户首赠<span>20</span>吱币哦!)</h5>
+                                    <div class="ziBi">
+                                    	<label>您的现有吱币为：<span id="currentZiBi"></span></label>
+                                        <input type="button" value="充值" class="btn btn-primary" id="cz"/>
+                                        <p id="ziBiTishi"></p>
+                                    </div>
+                                    <ul class="czMoney" style="display:none" id="czMoney">
+                                    	<li><input type="radio" name="zmoney" value="10"/>10吱币</li>
+                                        <li><input type="radio" name="zmoney" value="20"/>20吱币</li>
+                                        <li><input type="radio" name="zmoney" value="50"/>50吱币</li>
+                                        <li><input type="radio" name="zmoney" value="100"/>100吱币</li>
+                                        <li><input type="radio" name="zmoney" value="200"/>200吱币</li>
+                                        <li><input type="radio" name="zmoney" value="500"/>500吱币</li><br/>
+                                     	<input type="button" value="确认充值" class="btn btn-warning" id="makeSure"/>
+                                        <div id="tishiDiv" style="display:none">请选择充值数额...</div>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-setMsg" id="settingF" style="display:none;">
+                    <div class="setting-head">
+                        <i class="glyphicon glyphicon-hdd"></i>
+                        <span>好友</span>
+                    </div>
+                    <div class="setting-content" id="fContent">
+                        <div id="searchFrPage">
+                            <div class="container" style="width:54vw; height:85%;margin-left: 0px;">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#myF" data-toggle="tab">我的好友</a></li>
+                                    <li><a href="#searchF" data-toggle="tab">查找朋友</a></li>
+                                </ul>
+                                <ul class="tab-content" id="tabF"><!--设置选项卡里面的内容-->
+                                    <li id="myF" class="tab-pane active">
+                                        <!--<div id="allmyfrd"></div>-->
+                                        <table id="allmyfrd" style="border:1px solid #336699"></table>
+                                    </li>
+                                    <li id="searchF" class="tab-pane">
+                                        <label>朋友账号：</label>
+                                        <input type="text" name="fZH" id="fZH" />
+                                        <input type="button" value="查找" class="btn btn-primary" onclick="zysearch()"/>
+                                        <input type='button' value='添加朋友' id='addfrd' onclick='addfrd()'/>
+                                        <table id="zyfriend" style="border:1px solid #336699;width:240px;margin:20px auto auto 28px;text-align: center">
+                                            <!--<tbody ></tbody>-->
+                                        </table>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-setMsg" id="settingD" style="display:none;">
+                    <div class="setting-head">
+                        <i class="glyphicon glyphicon-pencil"></i>
+                        <span>日记</span>
+                    </div>
+                    <div class="setting-content" id="dContent">
+                        <div id="myDateData">
+                            <div class="container" style="width:54vw; height:85%;margin-left: 0px;">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#myD" data-toggle="tab">我的日记</a></li>
+                                </ul>
+                                <ul class="tab-content" id="tabD"><!--设置选项卡里面的内容-->
+                                    <li id="myD" class="tab-pane active">你还没有日记</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-setMsg" id="settingT" style="display:none;">
+                    <div class="setting-head">
+                        <i class="glyphicon glyphicon-comment"></i>
+                        <span>记录</span>
+                    </div>
+                    <div class="setting-content" id="tContent">
+                        <div id="myTalkData">
+                            <div class="container" style="width:54vw; height:85%;margin-left: 0px;">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#myT" data-toggle="tab">我的记录</a></li>
+                                    <li><a href="#FTD" data-toggle="tab">好友记录</a></li>
+                                </ul>
+                                <ul class="tab-content" id="tabT"><!--设置选项卡里面的内容-->
+                                    <li id="myT" class="tab-pane active">你还没有发说说</li>
+                                    <li id="FTD" class="tab-pane">你的好友还没有发说说</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-setMsg" id="settingP" style="display:none;">
+                    <div class="setting-head">
+                        <i class="glyphicon glyphicon-picture"></i>
+                        <span>照片</span>
+                    </div>
+                    <div class="setting-content" id="pContent">
+                        <div id="searchPhoto">
+                            <div class="container" style="width:58vw; height:80%;margin-left: 0px;">
+                                <ul><!--设置选项卡里面的内容-->
+                                    <li id="myP" class="tab-pane active">
+                                        <div  id="showZymypic" ></div>
+                                        <!--弹出层时背景层DIV-->
+                                        <div id="fade" class="black_overlay"></div>
+                                        <div id="MyDiv" class="white_content">
+                                            <div style=" cursor: default; height: 40px;">
+                                                <span class="close" onclick="CloseDiv('MyDiv','fade')">X</span>
+                                            </div>
+                                            <div class="topPic">
+                                                &nbsp;&nbsp;&nbsp;相册名称：<input type="text" name="pgroup" id="pgroup"/>
+                                                照片描述：<input type="text" name="premarks" id="premarks"/>
+                                                <input type="file" id="zymyPic" name="zymyPic" accept="image/*" onchange="setImagePreviews(this,'showPic')" multiple/>
+                                                <input type="button" id="zymyPic2" value="选择照片"/>
+                                                <input type="button" class="button1" value="添加" onclick="addZypic()"/>
+                                            </div>
+                                            <div id="showPic">
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-setMsg" id="settingG" style="display:none;">
+					<div class="setting-head">
+                    	<i class="glyphicon glyphicon-gift"></i>
+                        <span>礼物</span>
+                    </div>
+                    <div class="setting-content" id="gContent">
+                    	<div id="myGiftData">
+                            <div class="container" style="width:54vw; height:85%;margin-left: 0px;">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#sendG" data-toggle="tab">赠送礼物</a></li>
+                                    <li><a href="#myG" data-toggle="tab">我收到的礼物</a></li>
+                                </ul>
+                                <ul class="tab-content" id="tabG"><!--设置选项卡里面的内容-->
+                                    <li id="sendG" class="tab-pane active">赠送礼物</li>
+                                    <li id="myG" class="tab-pane">
+                                    	我收到的礼物
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- InstanceEndEditable -->
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+
+    </div>
+	<!-- InstanceBeginEditable name="script" -->
+    <!--bootstrap是基于jquery的，所以要先引入jquery-->
+    <script src="../js/jquery-2.0.3.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/yearmonth.js"></script>
+    <script type="text/javascript" src="../js/setPersonMsg.js"></script>
+    <script type="text/javascript" src="../js/ajaxfileupload.js"></script>
+    <script type="text/javascript" src="../js/showPic.js"></script>
+    <!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>

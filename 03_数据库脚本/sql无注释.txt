@@ -1,0 +1,115 @@
+create database zys character set utf8;
+
+use zys;
+
+create table userInfo(
+    uid int primary key auto_increment,
+    uname varchar(40) not null unique,
+    usex varchar(4),
+    upwd varchar(20) not null,
+    uemail varchar(30) not null unique,
+    uaddress varchar(40),
+    utel varchar(15),
+    uoffice varchar(20),
+    ublood varchar(20),
+    umerry varchar(20),
+    uhobby varchar(40),
+    umoney int not null,
+    upic varchar(1000),
+    ubackground varchar(1000),
+    status int,
+    birthday varchar(10)
+);
+alter table userInfo auto_increment=1001;
+
+create table noteinfo(
+    nid int primary key auto_increment,
+    ntime timestamp not null default current_timestamp,
+    ndata text not null,
+    npic varchar(1000),
+    uid int
+);
+alter table noteinfo auto_increment=1001;
+
+
+create table talkinfo(
+    tid int primary key auto_increment,
+    ttime timestamp not null default current_timestamp,
+    tdata text not null,
+    tpic varchar(1000),
+    tcount int,
+    uid int,
+    greatcount int
+);
+alter table talkinfo auto_increment=1001;
+
+
+create table discussInfo(
+    discid int primary key auto_increment,
+    disctime timestamp not null default current_timestamp,
+    discdata varchar(100),
+    uid int,
+    tid int,
+    dstatus
+);
+alter table discussInfo auto_increment=1001;
+
+
+create table answerInfo(
+    ansid int primary key auto_increment,
+    anstime timestamp not null default current_timestamp,
+    ansdata varchar(100),
+    uid int,
+    discid int,
+    astatus int
+);
+alter table answerInfo auto_increment=1001;
+
+
+create table friendInfo(
+    frid int primary key auto_increment,
+    uid int not null,
+    fid int,
+    fremarks varchar(100),
+    fgroup varchar(100),
+    status int
+);
+alter table friendInfo auto_increment=1001;
+
+
+create table photoInfo(
+    pid int primary key,
+    uid int not null,
+    premarks varchar(100),
+    pgroup varchar(100),
+    pstatus int
+);
+
+
+create table giftInfo(
+    gid int primary key auto_increment,
+    gremarks varchar(100),
+    gprice int not null,
+    gpic varchar(100)
+);
+alter table giftInfo auto_increment=1001;
+
+
+create table sendgift(
+    sid int primary key auto_increment,
+    uid int not null,
+    fid int not null,
+    gid int not null,
+    sremarks varchar(100),
+    sstatus int
+);
+alter table sendgift auto_increment=1001;
+
+create table suggestions(
+    sugid int primary key auto_increment,
+    uid int not null,
+    sugdata varchar(1000),
+    sugpic varchar(1000),
+    sugtype varchar(30)
+);
+alter table suggestions auto_increment=1001;

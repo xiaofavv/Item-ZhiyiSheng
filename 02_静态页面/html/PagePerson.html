@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <!--使用最高级别的可用模式显示内容-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--移动端的视窗大小和我们的页面是同一个尺寸，为移动端做准备（包含头部信息用于适应不同设备）-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>我的首页 - 吱一声</title>
+    <!-- Bootstrap -->
+    <link href="../css/resert.css" rel="stylesheet" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/index2.css" />
+    <link rel="stylesheet" href="../css/PagePerson.css" />
+    <link rel="short icon" href="../images/logo.png" />
+
+</head>
+<body>
+    <!--菜单栏-->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="" class="navbar-brand"><img src="../images/menulogo.png" /></a>
+            </div>
+            <form class="navbar-form navbar-left">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="搜索你感兴趣的吧" />
+                <span class="input-group-addon"><a href=""><span class="glyphicon glyphicon-search"></span></a>
+                </span>
+                </div>
+            </form>
+            <ul class="nav navbar-nav ">
+                <li><a href="index.html"><span class="glyphicon glyphicon-home " ></span>首页</a></li>
+                <li><a href="PagePerson.html"><span class="glyphicon glyphicon-tree-conifer"></span>个人主页</a></li>
+                <li><a href="setPersonMsg.html#friend"><span class="glyphicon glyphicon-heart-empty"></span>好友</a></li>
+                <li><a href="setPersonMsg.html#mypic"><span class="glyphicon glyphicon-picture"></span>照片</a></li>
+                <li><a href=""><span class="glyphicon glyphicon-comment"></span>消息<span class="badge" id="badge">1</span></a></li>
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>账户<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/setPersonMsg.html"><span class="glyphicon glyphicon-cog"></span>账户设置</a> </li>
+                        <li><a href=""><span class="glyphicon glyphicon-euro"></span>吱币充值</a> </li>
+                        <li><a href=""><span class="glyphicon glyphicon-off"></span>退出</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-font"></span>关于我们<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href=""><span class="glyphicon glyphicon-hand-right"></span>团队介绍</a> </li>
+                        <li><a href=""><span class="glyphicon glyphicon-fire"></span>团队文化</a> </li>
+                        <li><a href=""><span class="glyphicon glyphicon-cutlery"></span>加入我们</a></li>
+                        <li><a href=""><span class="glyphicon glyphicon-earphone"></span>客服</a></li>
+                        <li><a href=""><span class="glyphicon glyphicon-tree-deciduous"></span>意见反馈</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+
+    </nav>
+
+    <div class="middle">
+        <div class="content">
+            <div class="content-head" id="ubackground">
+                <div class="setHeadPic">
+                    <div class="headIcon" id="setPic">
+                        <i class="glyphicon glyphicon-cog"></i>
+                        <span>设置封面</span>
+                    </div>
+                    <ul id="setPicList">
+                        <li>从相册中选择</li>
+                        <li>从主题中选择</li>
+                    </ul>
+                </div>
+                <div class="Person">
+                    <div class="PersonPic">
+                        <img src="../images/zanwu.jpg" id="PersonPic" alt="头像" class="P-Pic"/>
+                        <p>
+                            <a class="changePic">更改头像</a>
+                            <a class="editMsg" href="setPersonMsg.html">修改资料</a>
+                        </p>
+                    </div>
+                    <div class="PersonMsg">
+                        <h2 id="nc"></h2>
+                        <ul class="Msg">
+                            <li><i class="glyphicon glyphicon-calendar"></i><span id="birthday"> </span></li>
+                            <li><i class="glyphicon glyphicon-home"></i><span id="address"> </span></li>
+                            <li>
+                                <a class="detailMsg" href="setPersonMsg.html">
+                                    <i class="glyphicon glyphicon-edit"></i>
+                                    <span> 详细资料</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+                <div class="content-left">
+                    <ul class="P-List">
+                        <li><i class="glyphicon glyphicon-picture"></i><a href="setPersonMsg.html#mypic"> 我的照片</a></li>
+                        <li><i class="glyphicon glyphicon-pencil"></i><a href="setPersonMsg.html#note"> 我的日记</a></li>
+                        <li><i class="glyphicon glyphicon-comment"></i><a href="setPersonMsg.html#talk"> 我的记录</a></li>
+                        <li><i class="glyphicon glyphicon-heart-empty"></i><a href="setPersonMsg.html#friend"> 我的好友</a> </li>
+                        <li><i class="glyphicon glyphicon-gift"></i><a href="setPersonMsg.html#gift"> 我的礼物</a></li>
+                    </ul>
+                </div>
+                <div class="content-right">
+
+                </div>
+                <div class="content-center">
+                    <ul id="personData">
+
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!--尾部-->
+    <div class="foot">
+        <p class="foot_us">Copyright&copy; 2005 - 2016<strong>丁紫依&谢玉&何璐瑶</strong>All Rights Reserved.</p>
+        <div class="foot_link">
+            <p class="link_1">友情链接：|
+                <a href="http://www.kugou.com/" target="_blank">酷狗音乐</a>|
+                <a href="http://www.cardbaobao.com/" target="_blank">卡宝宝网</a> |
+                <a href="http://www.hitao.com/" target="_blank">嗨淘网</a>|
+                <a href="http://www.fengniao.com/" target="_blank">蜂鸟摄影网</a>|
+                <a href="http://www.7po.com/" target="_blank">奇珀论坛</a>|
+                <a href="http://www.xbiao.com/" target="_blank">世界名表</a>
+            </p>
+        </div>
+    </div>
+
+    <!--bootstrap是基于jquery的，所以要先引入jquery-->
+    <script src="../js/jquery-2.0.3.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/PagePerson.js"></script>
+</body>
+</html>
